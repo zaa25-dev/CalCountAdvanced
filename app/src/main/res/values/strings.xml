@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Calorie Counter</string>
+    <string name="enter_text_here">Enter text here</string>
+    <string name="food_name">Food item</string>
+    <string name="calories">Calories</string>
+    <string name="calories_format">%d cal</string>
+    <string name="log_food">Log Food</string>
+    <string name="add_new">Add Entry</string>
+</resources>
