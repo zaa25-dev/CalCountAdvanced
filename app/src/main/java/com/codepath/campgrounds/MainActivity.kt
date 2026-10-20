@@ -1,58 +1,95 @@
 package com.codepath.campgrounds
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.widget.Button
+import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.codepath.campgrounds.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var binding: ActivityMainBinding
     private val calorieEntries = mutableListOf<CalorieEntry>()
     private lateinit var adapter: CalorieAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val sharedPreferences = getSharedPreferences("AppSettings", Context.MODE_PRIVATE)
+        val isDarkModeEnabled = sharedPreferences.getBoolean("DARK_MODE", false)
+        if (isDarkModeEnabled) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Setup RecyclerView
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         adapter = CalorieAdapter(calorieEntries)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = adapter
 
         lifecycleScope.launch {
             (application as CalorieApplication).db.calorieDao().getAll().collect { databaseList ->
-                databaseList.map { entity ->
+                val mappedList = databaseList.map { entity ->
                     CalorieEntry(
                         entity.foodName ?: "",
                         entity.calories ?: 0
                     )
-                }.also { mappedList ->
-                    calorieEntries.clear()
-                    calorieEntries.addAll(mappedList)
-                    adapter.notifyDataSetChanged()
                 }
+                calorieEntries.clear()
+                calorieEntries.addAll(mappedList)
+                adapter.notifyDataSetChanged()
             }
         }
 
-        // "Log Food" Button
-        val btnAddItem: Button = findViewById(R.id.btnAddItem)
-        btnAddItem.setOnClickListener {
+        val settingsFragment = SettingsFragment()
+
+        // Handle navigation item clicks
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_settings -> {
+                    binding.mainContentLayout.visibility = View.GONE
+                    binding.fragmentContainer.visibility = View.VISIBLE
+                    replaceFragment(settingsFragment)
+                    true
+                }
+                else -> false
+            }
+        }
+
+        // Add Item Dialog
+        binding.btnAddItem.setOnClickListener {
             showAddCalorieDialog()
+        }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
+    }
+
+    private fun removeFragment(fragment: Fragment) {
+        if (fragment.isAdded) {
+            supportFragmentManager.beginTransaction()
+                .remove(fragment)
+                .commit()
         }
     }
 
     private fun showAddCalorieDialog() {
         val dialogView = LayoutInflater.from(this).inflate(R.layout.popup, null)
-
         val etFoodName = dialogView.findViewById<EditText>(R.id.etFoodName)
         val etCalories = dialogView.findViewById<EditText>(R.id.etCalories)
 

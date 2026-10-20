@@ -6,4 +6,7 @@
     </style>
 
     <style name="Theme.CalCountPlus" parent="Base.Theme.CalCountPlus" />
+
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight"/>
+
 </resources>
