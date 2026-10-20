@@ -19,7 +19,15 @@
         android:layout_height="wrap_content"
         android:text="Dark Mode"
         android:textSize="18sp"
-        android:layout_marginBottom="32dp" />
+        android:layout_marginBottom="24dp" />
+
+    <!-- Button to trigger notification -->
+    <Button
+        android:id="@+id/btnSendNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Daily Reminder Notification"
+        android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/btnResetData"

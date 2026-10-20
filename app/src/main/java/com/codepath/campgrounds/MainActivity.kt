@@ -1,11 +1,26 @@
 package com.codepath.campgrounds
 
+import android.R.attr.description
+import android.annotation.SuppressLint
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.app.ActivityCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.fragment.app.Fragment
 import com.codepath.campgrounds.databinding.ActivityMainBinding
+import okhttp3.internal.notify
+import kotlin.jvm.java
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,7 +57,6 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-        // Set default fragment only on the very first start
         if (savedInstanceState == null) {
             binding.bottomNavigationView.selectedItemId = R.id.nav_log
         }
