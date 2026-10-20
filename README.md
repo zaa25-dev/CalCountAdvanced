@@ -10,20 +10,20 @@ Time spent: 10 hours spent in total
 
 The following **required** functionality is completed:
 
-- [x] **Use at least 2 Fragments** - (Settings, Log, Dashboard)
+- [x] **Use at least 2 Fragments** - (Settings, Log, Dashboard, that's 3)
 - [x] **Create a new dashboard fragment where users can see a summary of their entered data**
 - [x] **Use one of the Navigation UI Views (BottomNavigation, Drawer Layout, Top Bar) to move between the fragments**
 
 The following **optional** features are implemented:
 
 - [x] **Add a more advanced UI (e.g: Graphing) for tracking trends in metrics**
-- [ ] **Implement daily notifications to prompt users to fill in their data**
+- [x] **Implement daily notifications to prompt users to fill in their data**
 
 The following **additional** features are implemented:
 
 - [x] List anything else that you can get done to improve the app functionality!
       - Since my previous version, I've added a dark mode I learned how to do from Lab 6
-      as well as adding a Reset All button to remove all data. 
+      as well as adding a Reset All button to remove all data. It's in the Settings tab. 
 
 ## Video Walkthrough
 
