@@ -26,8 +26,35 @@ The following **additional** features are implemented:
       as well as adding a Reset All button to remove all data. It's in the Settings tab. 
 
 ## Video Walkthrough
+Adding Items:
+<img width="540" height="1200" alt="Adding Items" src="https://github.com/user-attachments/assets/d6fac3d4-8993-48c1-b2e4-5bda7f66c99b" />
 
-Here's a walkthrough of implemented user stories:
+Fragments:
+<img width="540" height="1200" alt="Fragments" src="https://github.com/user-attachments/assets/bc59d938-5fc4-4fdc-967f-0db450bd3a18" />
+
+Dark Mode:
+<img width="540" height="1200" alt="Dark Mode" src="https://github.com/user-attachments/assets/7d0dfc38-d312-4db2-91bd-4e02404155fe" />
+
+Scrolling:
+<img width="540" height="1200" alt="Scrolling" src="https://github.com/user-attachments/assets/fac2d5ee-3454-4775-a6c1-31afcc31d89f" />
+
+Dashboard:
+<img width="540" height="1200" alt="Dashboard" src="https://github.com/user-attachments/assets/00a76695-5e53-4dc3-9b0f-2d34c830b468" />
+
+Persist:
+<img width="540" height="1200" alt="Persist" src="https://github.com/user-attachments/assets/06bc4536-0544-48da-9064-7284cccb3cf3" />
+
+Reset:
+<img width="540" height="1200" alt="Reset" src="https://github.com/user-attachments/assets/0dd9c213-88b7-4536-9956-8d356283ad5e" />
+
+Notifications:
+
+
+
+
+
+
+
 
 
 
