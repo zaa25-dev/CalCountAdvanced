@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 Adding Items:
-<img width="800" height="450" alt="Adding Items" src="https://github.com/user-attachments/assets/d6fac3d4-8993-48c1-b2e4-5bda7f66c99b" />
+<img width="300" height="500" alt="Adding Items" src="https://github.com/user-attachments/assets/d6fac3d4-8993-48c1-b2e4-5bda7f66c99b" />
 
 Fragments:
 <img width="540" height="1200" alt="Fragments" src="https://github.com/user-attachments/assets/bc59d938-5fc4-4fdc-967f-0db450bd3a18" />
