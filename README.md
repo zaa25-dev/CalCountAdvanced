@@ -2,7 +2,7 @@
 
 Submitted by: Zahid Amin
 
-CalCountAdvanced is a health metrics app that allows users to track ... [TODO] 
+CalCountAdvanced is a health metrics app that allows users to track the calories of the foods they've eaten. 
 
 Time spent: 10 hours spent in total
 
