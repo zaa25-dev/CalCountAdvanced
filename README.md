@@ -1,5 +1,3 @@
-<img width="540" height="1200" alt="Notifications" src="https://github.com/user-attachments/assets/e9ccd89c-d240-4e49-828a-0590094aef7a" />
-<img width="540" height="1200" alt="Notifications" src="https://github.com/user-attachments/assets/134c57b7-3f94-4d39-9fac-5015cf7ea26c" />
 # Android Project 6 - CalCountAdvanced
 
 Submitted by: Zahid Amin
